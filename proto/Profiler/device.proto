@@ -1,0 +1,61 @@
+
+syntax = "proto3";
+import "shared.proto";
+
+option csharp_namespace = "XTC.FMP.MOD.Profiler.LIB.Proto";
+package xtc.fmp.profiler;
+
+// 设备
+service Device {
+    // 上线
+    rpc Online(DeviceOnlineRequest) returns (DeviceOnlineResponse) {}
+    // 下线
+    rpc Offline(DeviceOfflineRequest) returns (BlankResponse) {}
+    // 心跳
+    rpc HeartBeat(DeviceHeartBeatRequest) returns (BlankResponse) {}
+    // 读取
+    rpc Retrieve(UuidRequest) returns (DeviceRetrieveResponse) {}
+    // 列举
+    rpc List(DeviceListRequest) returns (BundleListResponse) {}
+}
+
+// 设备上线的请求
+message DeviceOnlineRequest {
+    string serialNumber = 1; // 设备序列号
+    DeviceInfo deviceInfo = 2; // 设备信息
+}
+
+// 设备上线的回复
+message DeviceOnlineResponse{
+    string sessionId = 1; // 会话id
+}
+
+// 设备下载的请求
+message DeviceOfflineRequest {
+    string sessionId = 1; // 会话id
+}
+
+// 设备心跳的请求
+message DeviceHeartBeatRequest {
+    string sessionId = 1; // 会话id
+}
+
+message DeviceRetrieveResponse
+{
+    Status status = 1; // 回复的状态
+    DeviceInfo deviceInfo = 2; //  设备信息
+}
+
+message DeviceListRequest
+{
+    int64 offset = 1;  // 偏移值
+    int64 count = 2;  // 数量
+    repeated string fieldS; // 在回复中包含的字段
+}
+
+message DeviceListResponse
+{
+    Status status = 1;  // 状态
+    int64 total = 2;  // 总数
+    repeated DeviceInfo deviceInfoS = 3;  // 设备信息的实体列表
+}

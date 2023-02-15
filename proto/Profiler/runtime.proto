@@ -1,0 +1,10 @@
+
+syntax = "proto3";
+import "shared.proto";
+
+option csharp_namespace = "XTC.FMP.MOD.Profiler.LIB.Proto";
+package xtc.fmp.profiler;
+
+// 运行时
+service Runtime {
+}

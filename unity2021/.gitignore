@@ -1,0 +1,19 @@
+
+/_dist_/
+/_build_/
+/Profiler/Assets/TextMesh Pro/
+/Profiler/Assets/TextMesh Pro.meta
+/Profiler/Assets/Plugins/
+/Profiler/Assets/Plugins.meta
+/Profiler/Assets/3rd/
+/Profiler/Assets/3rd.meta
+/Profiler/Library/
+/Profiler/obj/
+/Profiler/Logs/
+/Profiler/Temp/
+/Profiler/UserSettings/
+/Profiler/*.sln
+/Profiler/*.csproj
+/Profiler/.vsconfig
+/Profiler/.vs/
+/.UNITY_HOME.env

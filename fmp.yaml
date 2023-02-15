@@ -1,0 +1,16 @@
+org_name: XTC
+module_name: Profiler
+generate:
+  active: true
+  database_driver: none
+  debug: false
+  unity_solution: true
+publish:
+  active: false
+  environment: develop
+  repository: grpcs://api.xtech.cloud:29000
+deploy:
+  active: false
+  environment: product
+  repository: grpc://localhost:18000
+  agent_port: 28000
